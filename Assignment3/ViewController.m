@@ -108,6 +108,10 @@
 }
 
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    DetailViewController *detailView = [[DetailViewController alloc] init];
+    Fruit * tempFruit = [_cart objectAtIndex:indexPath.row];
+    detailView.url = tempFruit.url;
+    [self.navigationController pushViewController:detailView animated:YES];
     
 }
 
